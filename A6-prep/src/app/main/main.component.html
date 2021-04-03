@@ -7,7 +7,7 @@
 
         <!-- All the lists -->
         <!-- TODO: Add boolean logic to conditional classes, TODO: iterate over all lists, TODO: display name of each list, and TODO: add click event so list can be viewed on the right half of the page -->
-        <div class="pseudobutton" *ngFor = "let list of allLists">{{ list.title}}</div>  <!--This line of code lets us see all the lists we've created thus far-->
+        <div class="pseudobutton" [class.selected]="list === currentList" [class.not-selected]= "list !== currentList" *ngFor = "let list of allLists" (click) = "viewNewList(list)">{{ list.title}}</div>  <!--This line of code lets us see all the lists we've created thus far and turns them into title buttons that allow us to eventually edit the list-->
 
         <!-- Toggle to add new list -->
         <!-- TODO: Make it visible only when not adding a new list, and TODO: add click event to toggle form -->
@@ -19,7 +19,7 @@
             <h4 id="create-new">Create a New List:</h4>
             <form #form>
                 <!-- TODO: Add conditional class for .empty-warning when trying to create with this field blank -->
-                <input #titleField type="text" maxLength="20" placeholder="Title" />
+                <input #titleField type="text" maxLength="20" placeholder="Title" [class.empty-warning]= "formIncomplete" />
                 <select #typeField>
                     <option value="general">General</option>
                     <option value="shopping">Shopping</option>
