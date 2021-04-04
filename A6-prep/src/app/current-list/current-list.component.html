@@ -5,11 +5,11 @@
     <!-- Current list will display here -->
 
     <!-- TODO: Reference the current list to get the title and description -->
-    <h3>Some List</h3>
+    <h3> {{ currentList.title }}</h3>
     <p id="desc">Info about the list</p>
 
     <!-- TODO: Make this entire section disappear if currently editing the list -->
-    <ng-container>
+    <ng-container *ngIf = "!editing">
         <!-- Toggle to edit list -->
         <!-- TODO: Make sure both of these buttons have click events to do what they're meant to do -->
         <div id="toggle">

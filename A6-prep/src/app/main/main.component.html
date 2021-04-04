@@ -33,13 +33,14 @@
                 </div>
                 
                 <!-- TODO: Make sure this is visible only if the title field is left blank when the Create button is clicked (hint: look at what happens in the createNewList() method) -->
-                <div class="warning">Please give your list a title!</div>
+                <div class="warning" *ngIf = "formIncomplete">Please give your list a title!</div>
             </form>
         </div>
     </div>
 
     <!-- On right -->
     <!-- TODO: pass the currentList and allLists properties to the current-list component - you also need special code in current-list.component.ts for this to work! -->
-    <app-current-list></app-current-list>
+    <!-- <app-current-list [currentList]="currentList" [allLists]="allLists"></app-current-list> -->
+    <app-current-list  ></app-current-list>
 
 </section>
