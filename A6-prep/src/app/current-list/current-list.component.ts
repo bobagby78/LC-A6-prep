@@ -10,8 +10,8 @@ import { List } from '../list';
 export class CurrentListComponent implements OnInit {
 
     // TODO: use the @Input() decorator (already imported above) to bring in currentList and allLists from the main component - you also need code in the <app-current-list> element in main.component.html for this to work!
-    @Input currentList: List;
-    @Input allLists: List[];
+    @Input() currentList: List;
+    @Input() allLists: List[];
 
     editing: boolean = false;
     formIncomplete: boolean = false;
